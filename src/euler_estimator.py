@@ -4,15 +4,13 @@ class EulerEstimator():
         self.derivative = derivative
 
     def calc_derivative_at_point(self, point):
-        x = point[0]
-        return self.derivative(x)
+        return self.derivative(point[0])
 
     def step_forward(self, point, step_size):
         x = point[0]
         y = point[1]
-        new_point = (x + step_size, y + self.calc_derivative_at_point(point) * step_size)
 
-        return new_point
+        return (x + step_size, y + self.calc_derivative_at_point(point) * step_size)
 
     def calc_estimated_points(self, point, step_size, num_steps):
         print(point)
