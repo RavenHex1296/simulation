@@ -13,10 +13,11 @@ class EulerEstimator():
         return (x + step_size, y + self.calc_derivative_at_point(point) * step_size)
 
     def calc_estimated_points(self, point, step_size, num_steps):
-        print(point)
+        estimated_point_list = [point]
+        current_point = point
 
         for n in range(num_steps):
-            print(self.step_forward(point, step_size))
-            point = self.step_forward(point, step_size)
+            current_point = self.step_forward(current_point, step_size)
+            estimated_point_list.append(current_point)
 
-        return
+        return estimated_point_list

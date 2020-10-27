@@ -18,4 +18,4 @@ assert euler.step_forward((1, 4), 0.5) == (1.5, 5)
 print("PASSED")
 
 print("First 4 steps with initial point (1, 4) and step size 0.5: ")
-euler.calc_estimated_points((1, 4), 0.5, 4)
+print(euler.calc_estimated_points((1, 4), 0.5, 4))
