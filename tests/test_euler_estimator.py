@@ -1,6 +1,6 @@
 import sys
 sys.path.append('src')
-from euler_estimator import *
+from euler_estimator import EulerEstimator
 
 
 def derivative(t):
@@ -19,3 +19,5 @@ print("PASSED")
 
 print("First 4 steps with initial point (1, 4) and step size 0.5: ")
 print(euler.calc_estimated_points((1, 4), 0.5, 4))
+
+euler.plot((-5, 10), 0.1, 100)
