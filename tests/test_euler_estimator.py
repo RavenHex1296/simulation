@@ -67,3 +67,6 @@ assert estimated_points == [
    (5.6, {'A': 13.85, 'B': 2.35, 'C': -11.8})
 ], "Incorrect ouput"
 print("PASSED")
+
+
+euler.plot(initial_point, 0.01, 5)

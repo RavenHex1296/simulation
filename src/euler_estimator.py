@@ -1,4 +1,4 @@
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 
 class EulerEstimator():
@@ -36,19 +36,26 @@ class EulerEstimator():
 
         return points
 
-'''
-    def plot(self, point, step_size, num_steps):
-        x_values = [point[0]]
-        y_values = [point[1]]
+    def plot(self, point, step_size, end_value):
+        t_values = []
+        step_values = {}
 
-        for n in range(num_steps):
+        for key in point[1]:
+            step_values[key] = []
+
+        while True:
+            if point[0] > end_value:
+                break
+
+            for key in point[1]:
+                step_values[key].append(point[1][key])
+
+            t_values.append(point[0])
             point = self.step_forward(point, step_size)
-            x_values.append(point[0])
-            y_values.append(point[1])
 
         plt.style.use('bmh')
-        plt.plot(x_values, y_values)
-        plt.xlabel('x')
-        plt.ylabel('y')
+
+        for key in step_values:
+            plt.plot(t_values, step_values[key])
+
         plt.savefig('Euler-plot.png')
-'''
