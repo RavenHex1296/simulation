@@ -39,6 +39,7 @@ class EulerEstimator():
     def plot(self, point, step_size, end_value):
         t_values = []
         step_values = {}
+        plt.style.use('bmh')
 
         for key in point[1]:
             step_values[key] = []
@@ -52,8 +53,6 @@ class EulerEstimator():
 
             t_values.append(point[0])
             point = self.step_forward(point, step_size)
-
-        plt.style.use('bmh')
 
         for key in step_values:
             plt.plot(t_values, step_values[key])
