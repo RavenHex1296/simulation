@@ -17,11 +17,7 @@ class EulerEstimator():
     def step_forward(self, point, step_size):
         t = point[0]
         derivatives = self.calc_derivative_at_point(point)
-        x = {}
-
-        for key in point[1]:
-            x[key] = point[1][key] + derivatives[key] * step_size
-
+        x = {key:point[1][key] + derivatives[key] * step_size for key in point[1]}
         new_point = (t + step_size, x)
         return new_point
 
